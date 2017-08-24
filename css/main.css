@@ -1,0 +1,22 @@
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-08-24 17:53:19
+ * @version $Id$
+ */
+* {
+  margin: 0;
+  padding: 0; }
+
+.container {
+  width: 1200px; }
+
+ul, li, ol, li, dl, dt, dd {
+  liststyle: none; }
+
+a, a:focus {
+  outline: none;
+  text-decoration: none;
+  display: inline-block; }
+
+/*# sourceMappingURL=main.css.map */
