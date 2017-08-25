@@ -1,22 +1,85 @@
 @charset "UTF-8";
+
 /**
  * 
  * @authors Your Name (you@example.org)
  * @date    2017-08-24 17:53:19
  * @version $Id$
  */
+
+
+/*全局样式*/
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 .container {
-	width: 1200px;
+    width: 1200px;
 }
-ul,li,ol,li,dl,dt,dd {
-	liststyle:none;
+ul, li, ol, li, dl, dt, dd {
+    list-style: none;
 }
-a, a:focus {
-	outline:none;
-	text-decoration:none;
-	display:inline-block;
+img, a, a:focus {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/*头部样式*/
+$plr: 20px;
+$ptb: 10px;
+.header {
+	position: fixed;
+	top: 0px;
+	z-index: 5;
+	width: 100%;
+	height: 70px;
+	padding: $ptb $plr;
+}
+.header:after {
+	clear: both;
+	content: "";
+	display: block;
+	visibility: hidden;
+}
+nav {
+	float: right;
+	width: 300px;
+	background: #fff;
+	margin-top: -$ptb;
+	padding: $ptb * 10 0;
+	overflow: hidden;
+	li {
+		padding: $plr $ptb * 5;
+		border-bottom: 1px solid #eaeaea;
+		-webkit-transition: all 1s ease;
+		transition: all 1s ease;
+		a{
+			color: #666;
+			font-size: 14px;
+			padding-left: $ptb * 2;
+		}
+	}
+}
+
+/*内容部分*/
+$height: 930px;
+.content {	
+	.banner {
+		/*轮播*/
+		width: 100%;
+		overflow: hidden;
+		ul {
+			overflow: hidden;
+			height: $height;
+			li {
+				max-height: $height;
+				float: left;
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
 }

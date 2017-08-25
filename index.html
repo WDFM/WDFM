@@ -11,30 +11,26 @@
 </head>
 
 <body>
-	<div class="header">
-		<div class="logo">
-			<img src="img/logo.png" alt="">
-		</div>
-		<nav>
-			<ul>
-				<li><a href="#">首页</a></li>
-				<li><a href="#">作品</a></li>
-				<li><a href="#">关于</a></li>
-				<li><a href="#">概念</a></li>
-				<li><a href="#">联系</a></li>
-			</ul>
-		</nav>
-	</div>
+    <div class="header">
+        <a href="index.html"><img src="img/logo.png" alt=""></a>
+        <nav id="nav" :style="{height: height + 'px'}">
+            <ul>
+                <li v-for="li in ul">
+                    <a href="#">{{ li.go }}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <ul id="banner">
+                <li v-for="(li,index) in ul" :key="index" v-show="index === count"><img :src="li.img"></li>
+            </ul>
+        </div>
+    </div>
 
-	<div class="content">
-		<div class="banner">
-			<ul>
-				<li><img src="img/roadbg.jpg" alt=""></li>
-				<li><img src="img/roadbg.jpg" alt=""></li>
-				<li><img src="img/roadbg.jpg" alt=""></li>
-			</ul>
-		</div>
-	</div>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
