@@ -4,14 +4,14 @@
  * @date    2017-08-25 10:17:06
  * @version $Id$
  */
-var h = document.body.clientHeight;
-
+var h = window.screen.height;
 //导航
 var nav = new Vue({
-	el: '#nav',
+	el: '.header',
 	data: {
 		height: h,
-		ul: [
+		show: true,
+		items: [
 			{ go: '首页' },
 			{ go: '作品' },
 			{ go: '关于' },
@@ -19,6 +19,11 @@ var nav = new Vue({
 			{ go: '联系' },
 			{ go: '未来'}
 		]
+	},
+	methods: {
+		show: function () {
+			
+		}
 	}
 
 });
@@ -44,9 +49,10 @@ var banner = new Vue({
 				this.count = 0
 				return
 			}
+			// this.ul = _.shuffle(this.ul)
 		},
 		go(){
-			setInterval(this.autoplay, 1000)
+			setInterval(this.autoplay, 5000)
 		},
 	}
 })

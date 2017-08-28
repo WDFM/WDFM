@@ -13,22 +13,22 @@
 <body>
     <div class="header">
         <a href="index.html"><img src="img/logo.png" alt=""></a>
+        <div id="menu" v-show="show" @click="show"></div>
         <nav id="nav" :style="{height: height + 'px'}">
             <ul>
-                <li v-for="li in ul">
-                    <a href="#">{{ li.go }}</a>
+                <li v-for="item in items">
+                    <a href="#">{{ item.go }}</a>
                 </li>
             </ul>
         </nav>
     </div>
     <div class="content">
         <div class="banner">
-            <ul id="banner">
+            <transition-group tag="ul" name="list" id="banner">
                 <li v-for="(li,index) in ul" :key="index" v-show="index === count"><img :src="li.img"></li>
-            </ul>
+            </transition-group>
         </div>
     </div>
-
     <script type="text/javascript" src="js/vue.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

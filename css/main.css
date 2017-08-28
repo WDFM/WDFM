@@ -36,13 +36,24 @@ img, a, a:focus {
   display: block;
   visibility: hidden; }
 
+#menu {
+  width: 30px;
+  height: 30px;
+  background: #7CC5F9;
+  position: absolute;
+  right: 90px;
+  top: 20px;
+  cursor: pointer; }
+
 nav {
   float: right;
   width: 300px;
   background: #fff;
   margin-top: -10px;
   padding: 100px 0;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  right: 320px; }
   nav li {
     padding: 20px 50px;
     border-bottom: 1px solid #eaeaea;
@@ -58,13 +69,41 @@ nav {
   /*轮播*/
   width: 100%;
   overflow: hidden; }
-  .content .banner ul {
+  .content .banner #banner {
     overflow: hidden;
-    height: 930px; }
-    .content .banner ul li {
+    height: 930px;
+    width: 100%; }
+    .content .banner #banner li {
+      position: absolute;
       max-height: 930px;
-      float: left; }
-      .content .banner ul li img {
+      width: 100%;
+      -webkit-transition: all 1s ease;
+      transition: all 1s ease; }
+      .content .banner #banner li img {
         width: 100%; }
 
-/*# sourceMappingURL=to.css.map */
+.list-enter-active {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+.list-leave-active {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%); }
+
+.list-enter {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+.list-leave {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+/*# sourceMappingURL=main.css.map */
