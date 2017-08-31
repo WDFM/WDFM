@@ -13,8 +13,8 @@
 <body>
     <div class="header">
         <a href="index.html"><img src="img/logo.png" alt=""></a>
-        <div id="menu" v-show="show" @click="show"></div>
-        <nav id="nav" :style="{height: height + 'px'}">
+        <div id="menu" @click="menuShow"></div>
+        <nav id="nav" :class="{show:isActive}" :style="{height: height + 'px'}">
             <ul>
                 <li v-for="item in items">
                     <a href="#">{{ item.go }}</a>
@@ -25,8 +25,24 @@
     <div class="content">
         <div class="banner">
             <transition-group tag="ul" name="list" id="banner">
-                <li v-for="(li,index) in ul" :key="index" v-show="index === count"><img :src="li.img"></li>
+                <li @mouseenter="stop" @mouseleave="go" v-for="(li,index) in ul" :key="index" v-show="index === count"><img :src="li.img"></li>
             </transition-group>
+            <ol>
+                <li @click="change(index)" :class="{'on':index === count}" v-for="(item,index) in items">{{item.enheng}}</li>
+            </ol>
+            <span id="prev" @click="prev">←</span>
+            <span id="next" @click="next">→</span>
+        </div>
+        <div class="about">
+            <div class="container">
+                <h1 class="title">作品<span>Works</span></h1>
+                <ul>
+                    <li v-for="item in items">
+                        <a href="#" class="img"><img :src="item.img" alt=""></a>
+                        <p><a href="#">{{item.p}}<span>{{item.span}}</span></a></p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="js/vue.min.js"></script>

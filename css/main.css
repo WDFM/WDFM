@@ -8,10 +8,12 @@
 /*全局样式*/
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Arial", "微软雅黑" !important; }
 
 .container {
-  width: 1200px; }
+  width: 1200px;
+  margin: 0 auto; }
 
 ul, li, ol, li, dl, dt, dd {
   list-style: none; }
@@ -41,9 +43,13 @@ img, a, a:focus {
   height: 30px;
   background: #7CC5F9;
   position: absolute;
-  right: 90px;
+  right: 60px;
   top: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 50; }
+
+nav.show {
+  right: 0px; }
 
 nav {
   float: right;
@@ -53,7 +59,11 @@ nav {
   padding: 100px 0;
   overflow: hidden;
   position: relative;
-  right: 320px; }
+  right: -320px;
+  -webkit-box-shadow: -5px 0px 10px -5px #999;
+  box-shadow: -5px 0px 10px -5px #999;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
   nav li {
     padding: 20px 50px;
     border-bottom: 1px solid #eaeaea;
@@ -68,19 +78,103 @@ nav {
 .content .banner {
   /*轮播*/
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  background: url("../img/boli.jpg") center no-repeat; }
   .content .banner #banner {
     overflow: hidden;
-    height: 930px;
+    height: 810px;
     width: 100%; }
     .content .banner #banner li {
       position: absolute;
-      max-height: 930px;
+      max-height: 810px;
       width: 100%;
       -webkit-transition: all 1s ease;
       transition: all 1s ease; }
       .content .banner #banner li img {
         width: 100%; }
+  .content .banner ol {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    z-index: 4;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -50px;
+    text-align: center; }
+    .content .banner ol li {
+      font-size: 16px;
+      display: inline-block;
+      line-height: 40px;
+      width: 10px;
+      height: 20px;
+      background: #fff;
+      margin: 0 10px;
+      position: relative;
+      top: 20px;
+      cursor: pointer;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    .content .banner ol li.on {
+      width: 8px;
+      height: 40px; }
+  .content .banner span {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  .content .banner #prev {
+    left: 20px; }
+  .content .banner #next {
+    right: 20px; }
+.content .about {
+  padding-top: 100px;
+  background: url("../img/logo.png") center no-repeat; }
+  .content .about h1 {
+    font-size: 20px;
+    color: #444;
+    font-weight: normal;
+    padding-bottom: 60px; }
+    .content .about h1 span {
+      display: block;
+      font-size: 12px;
+      color: #a5a5a5; }
+  .content .about ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+    width: 100%; }
+    .content .about ul li {
+      width: calc(100%/4);
+      margin: 20px 50px; }
+      .content .about ul li a.img {
+        margin-bottom: 30px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+      .content .about ul li img {
+        width: 100%;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+      .content .about ul li p a {
+        font-size: 15px;
+        color: #555; }
+        .content .about ul li p a span {
+          display: block;
+          font-size: 12px;
+          color: #929292; }
+    .content .about ul li:hover a.img {
+      margin-bottom: 10px; }
+      .content .about ul li:hover a.img img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); }
 
 .list-enter-active {
   -webkit-transition: all 1s ease;
